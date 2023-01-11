@@ -1,0 +1,19 @@
+[Unit]
+Description = Jarkom NodeJS
+#Name = jarkom.service
+#Wants = network.target
+#After = network-online.target
+#After = systemd-user-sessions.service
+#After = network-online.target
+
+[Service]
+Type = simple
+#User = nobody
+#Group = nobody
+WorkingDirectory = /root/a387-jarkom-labs/
+#ExecStart = /usr/bin/node /root/a387-jarkom-labs/app.js
+ExecStart = /usr/bin/node app.js
+Restart = always
+
+[Install]
+WantedBy = multi-user.target
